@@ -8,6 +8,9 @@
 
 # 配置
 PLANS_DIR="plans"
+DATE=$(date +%Y%m%d)
+TIME=$(date +%H%M%S)
+
 
 # 颜色定义
 RED='\033[0;31m'
@@ -47,7 +50,7 @@ main() {
         mkdir -p "$PLANS_DIR"
     fi
 
-    local file_path="${PLANS_DIR}/plan-${plan_name}.md"
+    local file_path="${PLANS_DIR}/${DATE}/${TIME}-${plan_name}.md"
 
     # 4. 检查文件是否存在
     if [ -f "$file_path" ]; then
