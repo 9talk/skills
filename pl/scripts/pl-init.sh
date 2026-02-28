@@ -55,7 +55,6 @@ main() {
     # 4. 创建文件并写入头部信息
     local datetime=$(date +"%Y-%m-%d %H:%M:%S")
     cat > "$file_path" <<EOF
----
 /plan: 与我共创此文件, 不要做任何实现, 共创文件, 每轮讨论你都要更新此文件
 ---
 EOF
