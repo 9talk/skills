@@ -56,8 +56,7 @@ main() {
     local datetime=$(date +"%Y-%m-%d %H:%M:%S")
     cat > "$file_path" <<EOF
 ---
-time: ${datetime}
-description: "与用户讨论规划细节，确定需要添加、修改或删除的内容。一旦达成共识或有内容改动，立即将更新后的完整内容写回规划文件。"
+/plan: 与我共创此文件, 不要做任何实现, 共创文件, 每轮讨论你都要更新此文件
 ---
 EOF
     echo -e "${GREEN}✓ 创建成功：$file_path${NC}"
