@@ -26,5 +26,5 @@ disable-model-invocation: true
 
 ## 要求
 - 本技能仅支持创建新规划，不处理已有规划的读取或修改。
-- 新规划必须通过 `pl-init.sh` 脚本创建。
+- 新规划必须通过 `bash ~/.claude/skills/pl/scripts/pl-init.sh` 脚本创建。
 - 禁止覆盖现有规划文件。
