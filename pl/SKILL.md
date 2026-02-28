@@ -2,6 +2,7 @@
 name: pl
 description: 启动一个新的规划。
 disable-model-invocation: true
+context: fork
 ---
 
 启动一个新的规划。
