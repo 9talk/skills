@@ -40,8 +40,8 @@ main() {
     local plan_name="$1"
 
     # 2. 确保目录存在
-    if [ ! -d "$PLANS_DIR" ]; then
-        mkdir -p "$PLANS_DIR"
+    if [ ! -d "$PLANS_DIR/${DATE}" ]; then
+        mkdir -p "$PLANS_DIR/${DATE}"
     fi
 
     local file_path="${PLANS_DIR}/${DATE}/${TIME}-${plan_name}.md"
