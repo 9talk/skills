@@ -39,27 +39,27 @@ main() {
 
     local plan_name="$1"
 
-    # 2. 验证 kebab-case 格式
-    if [[ ! $plan_name =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
-        echo -e "${RED}错误：名称 '$plan_name' 不符合 kebab-case 格式${NC}"
-        exit 1
-    fi
-
-    # 3. 确保目录存在
+    # 2. 确保目录存在
     if [ ! -d "$PLANS_DIR" ]; then
         mkdir -p "$PLANS_DIR"
     fi
 
     local file_path="${PLANS_DIR}/${DATE}/${TIME}-${plan_name}.md"
 
-    # 4. 检查文件是否存在
+    # 3. 检查文件是否存在
     if [ -f "$file_path" ]; then
         echo -e "${RED}错误：文件 '$file_path' 已存在${NC}"
         exit 1
     fi
 
-    # 5. 创建空文件
-    touch "$file_path"
+    # 4. 创建文件并写入头部信息
+    local datetime=$(date +"%Y-%m-%d %H:%M:%S")
+    cat > "$file_path" <<EOF
+---
+time: ${datetime}
+description: "与用户讨论规划细节，确定需要添加、修改或删除的内容。一旦达成共识或有内容改动，立即将更新后的完整内容写回规划文件。"
+---
+EOF
     echo -e "${GREEN}✓ 创建成功：$file_path${NC}"
 }
 
