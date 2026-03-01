@@ -21,7 +21,7 @@ NC='\033[0m'
 # 函数：打印帮助信息
 show_help() {
     echo -e "${YELLOW}用法:${NC} ./pl-init.sh <plan-name>"
-    echo -e "  名称：必须是 kebab-case 格式 (例如：add-user-auth)"
+    echo -e "  名称：必须填写名称"
 }
 
 # 主逻辑
@@ -57,6 +57,11 @@ main() {
     cat > "$file_path" <<EOF
 /plan: 与我共创此文件, 不要做任何实现, 共创文件, 每轮讨论你都要更新此文件, 现在处于规划设计阶段。严禁编写任何具体的代码。我们只讨论规划。如果我没明确说‘开始编码’，请不要输出具体实现逻辑。
 ---
+**创建时间**: ${DATE}
+**讨论记录**:
+---
+# ${plan_name}
+
 EOF
     echo -e "${GREEN}✓ 创建成功：$file_path${NC}"
 }
