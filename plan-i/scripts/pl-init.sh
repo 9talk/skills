@@ -65,7 +65,7 @@ main() {
 # ${plan_name}
 
 EOF
-    echo -e "${GREEN}✓ 创建成功：$file_path${NC}"
+    echo -e "${GREEN}✓ 创建规划文件成功, 文件路径：$file_path${NC}"
 }
 
 main "$@"
